@@ -1,5 +1,6 @@
 disabled_rules:
   - trailing_whitespace
+  - line_length
   
   # Find all the available rules by running: `swiftlint rules`
 

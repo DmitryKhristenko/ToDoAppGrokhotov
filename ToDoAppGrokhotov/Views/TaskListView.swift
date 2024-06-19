@@ -15,6 +15,7 @@ enum TaskStatus: String, CaseIterable {
 }
 
 struct TaskListView: View {
+    // MARK: - Properties
     @StateObject private var taskManager = TaskManager()
     @State private var selectedFilter: TaskStatus = .allTasks
     @ObservedResults(Task.self) var tasks
@@ -30,6 +31,7 @@ struct TaskListView: View {
         }
     }
     
+    // MARK: - Body
     var body: some View {
         NavigationView {
             VStack {
@@ -68,7 +70,6 @@ struct TaskListView: View {
         }
     }
 }
-
 
 #Preview {
     TaskListView()

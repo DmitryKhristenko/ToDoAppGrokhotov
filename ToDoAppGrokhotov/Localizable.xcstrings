@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "All" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
     },
     "Completed" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выполненные"
+          }
+        }
+      }
     },
     "Description" : {
       "localizations" : {
@@ -37,11 +51,35 @@
         }
       }
     },
+    "Error" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка"
+          }
+        }
+      }
+    },
     "Filter" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильтр"
+          }
+        }
+      }
     },
     "Incomplete" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Незавершённые"
+          }
+        }
+      }
     },
     "New Task" : {
       "localizations" : {
@@ -49,6 +87,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Новая задача"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ок"
           }
         }
       }
@@ -69,6 +117,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Описание"
+          }
+        }
+      }
+    },
+    "Task title cannot be empty" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заголовок задачи не может быть пустым"
           }
         }
       }

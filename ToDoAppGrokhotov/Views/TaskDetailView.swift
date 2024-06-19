@@ -11,7 +11,8 @@ struct TaskDetailView: View {
     // MARK: - Properties
     @ObservedObject var taskManager: TaskManager
     @State private var task: Task
-    @Environment(\.presentationMode) var presentationMode
+    @State private var showAlert: Bool = false
+    @Environment(\.dismiss) private var dismiss
     
     init(taskManager: TaskManager, task: Task?) {
         self.taskManager = taskManager
@@ -27,19 +28,28 @@ struct TaskDetailView: View {
                 DatePicker("Due Date", selection: $task.dueDate, displayedComponents: .date)
             }
         }
-        .navigationTitle(task.id.isEmpty ? "New Task" : "Edit Task")
+        .navigationTitle(task.realm == nil ? "New Task" : "Edit Task")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Save") {
-                    saveTask()
-                    presentationMode.wrappedValue.dismiss()
+                if task.realm == nil {
+                    Button("Save") {
+                        if task.title.isEmpty {
+                            showAlert = true
+                        } else {
+                            saveTask()
+                            dismiss()
+                        }
+                    }
                 }
             }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text("Task title cannot be empty"), dismissButton: .default(Text("OK")))
         }
     }
     
     private func saveTask() {
-        if task.id.isEmpty {
+        if task.realm == nil {
             taskManager.addTask(task)
         } else {
             taskManager.updateTask(task)
